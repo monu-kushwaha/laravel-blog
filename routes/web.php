@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
+Route::get('/', [HomeController::class, 'index']);
 
 
 // Route::get('/', [WelcomeController::Class, 'welcome'])->name('welcome');
@@ -112,9 +115,9 @@ Route::get('/post', function(){
 })->name('myPost');
 
 
-Route::get('/about', function(){
-    return view('about');
-})->name('about');
+// Route::get('/about', function(){
+//     return view('about');
+// })->name('about');
 
 // Route::redirect('/about','/test',301);
 // Route::redirect('/about','/test');
@@ -163,7 +166,23 @@ Route::controller(userController::class)->group(function(){
     Route::post('/update/{id}','update')->name('update');
 });
 
+Route::controller(HomeController::class)->group(function(){
+    Route::get('home', 'index')->name('home');
+    Route::get('about-us', 'about')->name('about');
+    Route::get('service', 'service')->name('service');
+    Route::get('product', 'product')->name('product');
+    Route::get('project', 'project')->name('project');
+    Route::get('contact-us', 'contact')->name('contact-us');
+    Route::get('blog', 'blog')->name('blog');
+});
+
+
+
+// Route::resource('users', UsersController::class);
+Route::resource('users', UsersController::class)->names(['create' => 'userCreate']);
+
 
 Route::fallback(function(){
-    return "<h1>Ham Pe To Hai na</h1>";
+    // return "<h1>Ham Pe To Hai na</h1>";
+    return render_view('404');
 });

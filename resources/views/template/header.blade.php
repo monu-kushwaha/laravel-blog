@@ -40,8 +40,8 @@
             <div class="container">
                 <div class="d-flex justify-content-between topbar">
                     <div class="top-info">
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>23 Ranking Street, New York</small>
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>Email@Example.com</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Chandigarh India</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>mk3841210@gmail.com</small>
                     </div>
                     <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your Business</small></div>
                     <div class="top-link">
@@ -56,31 +56,29 @@
         <!-- Topbar End -->
 
         <!-- Navbar Start -->
-        <div class="container-fluid bg-primary">
+        <div class="container-fluid bg-primary home-page-header">
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="text-white fw-bold d-block">High<span class="text-secondary">Tech</span> </h1>
+                    <a href="/" class="navbar-brand">
+                        <h1 class="text-white fw-bold d-block">Developer<span class="text-secondary">Monu</span> </h1>
                     </a>
                     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                            <a href="index.html" class="nav-item nav-link active text-secondary">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link">Services</a>
-                            <a href="project.html" class="nav-item nav-link">Projects</a>
+                            <a href="/" class="nav-item nav-link {{ Request::path() == url('/') ? 'active text-secondary' : '' }}">Home</a>
+                            <a href="about-us" class="nav-item nav-link {{ Request::path() == 'about-us' ? 'active' : '' }}">About</a>
+                            <a href="service" class="nav-item nav-link {{ Request::path() == 'service' ? 'active' : '' }}">Services</a>
+                            <a href="project" class="nav-item nav-link {{ Request::path() == 'project' ? 'active' : '' }}">Projects</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle {{ Request::path() == 'blog' ? 'active' : '' }}" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded">
-                                    <a href="blog.html" class="dropdown-item">Our Blog</a>
-                                    <a href="team.html" class="dropdown-item">Our Team</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
+                                    <a href="blog" class="dropdown-item {{ Request::path() == 'blog' ? 'active' : '' }}">Our Blog</a>
+                                    <a href="404" class="dropdown-item">404 Page</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact-us" class="nav-item nav-link {{ Request::path() == 'contact-us' ? 'active' : '' }}">Contact</a>
                         </div>
                     </div>
                     <div class="d-none d-xl-flex flex-shirink-0">
@@ -103,38 +101,3 @@
                 </nav>
             </div>
         </div>
-        <!-- Navbar End -->
-
-@hasSection('content')
-    @yield('content')
-    @include('template.footer')
-    @else
-    @php
-        header('Location: /404');
-        exit;
-    @endphp
-    @endif
-
-    {{-- @yield('footer') --}}
-<!-- Footer Start -->
-
-<!-- Footer End -->
-
-
-<!-- Back to Top -->
-<a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
-
-
-<!-- JavaScript Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-<!-- Template Javascript -->
-<script src="js/main.js"></script>
-</body>
-
-</html>

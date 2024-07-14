@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Rules\Uppercase;
 
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
@@ -95,7 +96,7 @@ class UserController extends Controller
     public function insertUser(Request $req){
         $req->validate(
             [
-                'name' =>  'required',
+                'name' =>  ['required', new Uppercase],
                 'email' =>  'required |email',
                 // 'age' =>  'required|numeric|min:10',
                 'age' =>  'required|numeric|between:10,20',
@@ -122,7 +123,7 @@ class UserController extends Controller
             // return view('addUser', ['msg' => 'Add successfully']);
             return redirect()->route('show');
         }
-        return "Not Add";
+        return "Not Added Data";
     }
 
     public function addUser(){

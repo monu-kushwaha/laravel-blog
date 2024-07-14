@@ -174,6 +174,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('project', 'project')->name('project');
     Route::get('contact-us', 'contact')->name('contact-us');
     Route::get('blog', 'blog')->name('blog');
+    Route::post('/submitForm','submitForm')->name('submitForm');
 });
 
 

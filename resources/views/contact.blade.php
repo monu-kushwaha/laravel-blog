@@ -95,23 +95,32 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                    <div class="p-5 rounded contact-form">
+                    @if(session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                    <form action={{route('submitForm')}} method="post" class="p-5 rounded contact-form">
+                        @csrf
                         <div class="mb-4">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Your Name">
+                            <input type="text" class="form-control border-0 py-3" placeholder="Your Name" name="name" value="{{old('name')}}">
                         </div>
                         <div class="mb-4">
-                            <input type="email" class="form-control border-0 py-3" placeholder="Your Email">
+                            <input type="number" class="form-control border-0 py-3" placeholder="Contact Number (Optional)" name="phone" value="{{old('phone')}}">
                         </div>
                         <div class="mb-4">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Project">
+                            <input type="email" class="form-control border-0 py-3" placeholder="Your Email" name="email" value="{{old('email')}}">
                         </div>
                         <div class="mb-4">
-                            <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message"></textarea>
+                            <input type="text" class="form-control border-0 py-3" placeholder="Reason" name="reason" value="{{old('reason')}}">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message" name="message" >{{old('message')}}</textarea>
                         </div>
                         <div class="text-start">
-                            <button class="btn bg-primary text-white py-3 px-5" type="button">Send Message</button>
+                            <button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

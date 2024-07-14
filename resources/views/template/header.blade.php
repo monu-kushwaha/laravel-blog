@@ -41,7 +41,9 @@
                 <div class="d-flex justify-content-between topbar">
                     <div class="top-info">
                         <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Chandigarh India</small>
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>mk3841210@gmail.com</small>
+                        <small class="me-3 text-white-50">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mk3841210@gmail.com" target="_blank" class="text-white-50"><i class="fas fa-envelope me-2 text-secondary"></i>mk3841210@gmail.com</a>
+                        </small>
                     </div>
                     <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your Business</small></div>
                     <div class="top-link">
@@ -67,9 +69,9 @@
                     </button>
                     <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                            <a href="/" class="nav-item nav-link {{ Request::path() == url('/') ? 'active text-secondary' : '' }}">Home</a>
-                            <a href="about-us" class="nav-item nav-link {{ Request::path() == 'about-us' ? 'active' : '' }}">About</a>
-                            <a href="service" class="nav-item nav-link {{ Request::path() == 'service' ? 'active' : '' }}">Services</a>
+                            <a href="{{ url('/') }}" class="nav-item nav-link {{ Request::is('/') ? 'active text-secondary' : '' }}">Home</a>
+                            <a href="{{ url('about-us') }}" class="nav-item nav-link {{ Request::path() == 'about-us' ? 'active' : '' }}">About</a>
+                            {{-- <a href="service" class="nav-item nav-link {{ Request::path() == 'service' ? 'active' : '' }}">Services</a> --}}
                             <a href="project" class="nav-item nav-link {{ Request::path() == 'project' ? 'active' : '' }}">Projects</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle {{ Request::path() == 'blog' ? 'active' : '' }}" data-bs-toggle="dropdown">Pages</a>

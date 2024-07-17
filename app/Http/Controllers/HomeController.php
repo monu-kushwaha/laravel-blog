@@ -56,12 +56,6 @@ class HomeController extends Controller
             'added_at' => now(),
         ];
         $user = DB::table('tbl_contact')->insert($data);
-        // if($user == true){
-        //     Mail::to('nkmk3841210@gmail.com')->send(new ContactMessageMail($data));
-        //     return redirect()->route('contact-us')->with('message', 'Your request submitted successfully. I will respond as soon as possible.');
-
-        // }
-        // return redirect()->route('contact-us')->with('message', 'Request faild. Due To Technical Issue.');
         try {
             Mail::to('nkmk3841210@gmail.com')->send(new ContactMessageMail($data));
             return redirect()->route('contact-us')->with('message', 'Your request submitted successfully. I will respond as soon as possible.');

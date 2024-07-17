@@ -58,9 +58,11 @@
             </div>
             <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
                 <h5 class="text-primary">About Us</h5>
-                <h1 class="mb-4">About HighTech Agency And It's Innovative IT Solutions</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus. Etiam gravida justo nec erat vestibulum, et malesuada augue laoreet.</p>
-                <p class="mb-4">Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra. Suspendisse viverra hendrerit diam in tempus.</p>
+                <h1 class="mb-4">Turning Your Digital Dreams into Reality</h1>
+                <p>
+                    We are a passionate and dedicated team of full stack web developers with a mission to turn your digital dreams into reality. With a strong foundation in both front-end and back-end technologies, we bring a holistic approach to web development, ensuring that every aspect of your website is crafted to perfection. Our expertise spans across creating visually appealing and interactive user interfaces using HTML, CSS, JavaScript, and jQuery, to building robust and efficient back-end systems with technologies like PHP, JSON, and various APIs, including REST APIs.
+                </p>
+                <p class="mt-4">Leveraging frameworks such as CodeIgniter and Laravel, as well as core PHP, we seamlessly integrate these components to deliver dynamic, responsive, and user-friendly websites. Our commitment to excellence and innovation guarantees a digital experience that not only meets but exceeds your expectations, whether you're building a new website from scratch or enhancing an existing one.</p>
                 <a href="" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
             </div>
         </div>

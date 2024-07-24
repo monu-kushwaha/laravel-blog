@@ -38,6 +38,10 @@ class HomeController extends Controller
         return render_view('blog');
     }
 
+    public function blogDetail(){
+        return render_view('blog-detail');
+    }
+
     public function submitForm(Request $req){
         $req->validate(
             [

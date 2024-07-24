@@ -15,14 +15,7 @@
                 @php
                     if(isset($msg))
                     echo '<span class="color-success">'.$msg.' <span>';
-
-                    // preArray($errors->all());
                 @endphp
-                {{-- <ul>
-                    @foreach ($errors->all() as $data)
-                        <li>{{$data}}</li>
-                    @endforeach
-                </ul> --}}
                 <div class="col-6">
                     <a href="{{route('show')}}" class="btn btn-dark">Home</a>
                     <form action="{{route('insertUser')}}" class="form mt-2" method="post" enctype="multipart/form-data">

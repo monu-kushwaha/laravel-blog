@@ -61,7 +61,7 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="text-primary">Address</h4>
-                            <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">23 rank Str, NY</a>
+                            <a href="https://maps.app.goo.gl/emgsCojuok9VCCcG7" target="_blank" class="h4">Chandigarh India</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="text-primary">Call Us</h4>
-                            <a class="h5" href="tel:+0123456789" target="_blank">+012 3456 7890</a>
+                            <a class="h6" href="tel:8303342422" target="_blank">+91 8303342422</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="text-primary">Email Us</h4>
-                            <a class="h5" href="mailto:info@example.com" target="_blank">info@example.com</a>
+                            <a class="h6" href="mailto:mk3841210@gmail.com">mk3841210@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -103,19 +103,24 @@
                     <form action={{route('submitForm')}} method="post" class="p-5 rounded contact-form">
                         @csrf
                         <div class="mb-4">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Your Name" name="name" value="{{old('name')}}">
+                            <input type="text" class="form-control border-0 py-3" placeholder="Your Name" name="name" value="{{old('name')}}" required>
+                            <span class="text-dark">@error('name'){{$message}}@enderror</span>
                         </div>
                         <div class="mb-4">
                             <input type="number" class="form-control border-0 py-3" placeholder="Contact Number (Optional)" name="phone" value="{{old('phone')}}">
+                            <span class="text-dark">@error('phone'){{$message}}@enderror</span>
                         </div>
                         <div class="mb-4">
-                            <input type="email" class="form-control border-0 py-3" placeholder="Your Email" name="email" value="{{old('email')}}">
+                            <input type="email" class="form-control border-0 py-3" placeholder="Your Email" name="email" value="{{old('email')}}" required>
+                            <span class="text-dark">@error('email'){{$message}}@enderror</span>
                         </div>
                         <div class="mb-4">
-                            <input type="text" class="form-control border-0 py-3" placeholder="Reason" name="reason" value="{{old('reason')}}">
+                            <input type="text" class="form-control border-0 py-3" placeholder="Reason" name="reason" value="{{old('reason')}}" required>
+                            <span class="text-dark">@error('reason'){{$message}}@enderror</span>
                         </div>
                         <div class="mb-4">
-                            <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message" name="message" >{{old('message')}}</textarea>
+                            <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Message" name="message" required>{{old('message')}}</textarea>
+                            <span class="text-dark">@error('message'){{$message}}@enderror</span>
                         </div>
                         <div class="text-start">
                             <button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message</button>

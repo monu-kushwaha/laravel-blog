@@ -83,9 +83,24 @@
         </div>
         <div class="col-md-6 content">
             <div class="content-bg">
-                <h1>Blog Title 2</h1>
+                <h1>Blog Title 3</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex eu libero viverra, nec cursus sapien faucibus. Aliquam erat volutpat. Nulla facilisi. Curabitur a libero nec elit auctor gravida.</p>
                 <p>Quisque bibendum nisi ut turpis ullamcorper, non ullamcorper purus pharetra. Fusce lacinia ligula magna, sed viverra lectus auctor sed. Cras id eros libero. Phasellus scelerisque vehicula bibendum.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row full-height mt-5 mb-4">
+        <div class="col-md-6 content">
+            <div class="content-bg">
+                <h1>Blog Title 4</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex eu libero viverra, nec cursus sapien faucibus. Aliquam erat volutpat. Nulla facilisi. Curabitur a libero nec elit auctor gravida.</p>
+                <p>Quisque bibendum nisi ut turpis ullamcorper, non ullamcorper purus pharetra. Fusce lacinia ligula magna, sed viverra lectus auctor sed. Cras id eros libero. Phasellus scelerisque vehicula bibendum.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="background-image">
+                <img class="img-fluid" src="{{url('img/about-1.jpg')}}" alt="">
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
         }
 
-        .background {
+        .background404  {
             background-image: url('img/hampe-to-hai-no.gif');
             background-size: cover;
             background-position: center;
@@ -23,26 +23,26 @@
             color: white;
         }
 
-        .content {
+        .background404 .content {
             background: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 10px;
         }
 
-        h1 {
+        .background404 h1 {
             font-size: 4em;
             margin: 0;
         }
 
-        p {
+        .background404 p {
             font-size: 1.5em;
         }
 
-        .buttons {
+        .background404 .buttons {
             margin-top: 20px;
         }
 
-        .buttons a {
+        .background404 .buttons a {
             text-decoration: none;
             color: white;
             background: #007bff;
@@ -52,13 +52,13 @@
             transition: background 0.3s ease;
         }
 
-        .buttons a:hover {
+        .background404 .buttons a:hover {
             background: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="background">
+    <div class="background404">
         <div class="content">
             <h1>404</h1>
             <p>Page Not Found</p>

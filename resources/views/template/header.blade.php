@@ -47,10 +47,10 @@
                     </div>
                     <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your Business</small></div>
                     <div class="top-link">
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        {{-- <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a> --}}
+                        <a href="https://x.com/Monukushwa17969" class="bg-light nav-fill btn btn-sm-square rounded-circle" target="_blank"><i class="fab fa-twitter text-primary"></i></a>
+                        {{-- <a href="https://www.linkedin.com/in/monu-kushwaha-7609a6250/" class="bg-light nav-fill btn btn-sm-square rounded-circle" target="_blank"><i class="fab fa-instagram text-primary"></i></a> --}}
+                        <a href="https://www.linkedin.com/in/monu-kushwaha-7609a6250/" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="d-flex flex-column pe-4 border-end">
                             <span class="text-white-50">Have any questions?</span>
-                            <span class="text-secondary">Call: + 0123 456 7890</span>
+                            <span class="text-secondary">Call: +91 8303342422</span>
                         </div>
                         <div class="d-flex align-items-center justify-content-center ms-4 ">
                             <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>

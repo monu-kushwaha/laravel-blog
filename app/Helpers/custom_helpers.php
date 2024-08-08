@@ -21,4 +21,23 @@ if (!function_exists('render_view')) {
     }
 }
 
+if (!function_exists('render_admin')) {
+    if (!function_exists('render_admin')) {
+        function render_admin($page, $data = [])
+        {
+            if (!$page) {
+                return redirect()->route('404');
+            }
+    
+            $header = view('admin.template.header')->render();
+            $content = view('admin.' . $page, $data)->render();
+            $footer = view('admin.template.footer')->render();
+    
+            $fullPage = $header . $content . $footer;
+    
+            return response($fullPage);
+        }
+    }
+}
+
 

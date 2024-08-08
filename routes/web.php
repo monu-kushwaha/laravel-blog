@@ -6,6 +6,9 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Middleware\ValidAdmin;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -176,6 +179,28 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('blog', 'blog')->name('blog');
     Route::get('blog-detail', 'blogDetail')->name('blog-detail');
     Route::post('/submitForm','submitForm')->name('submitForm');
+});
+
+Route::controller(LoginController::class)->group(function(){
+    Route::get('admin', 'login')->name('login');
+    Route::get('signup', 'signup')->name('signup');
+    Route::post('/setupSignup', 'setupSignup')->name('setupSignup');
+    Route::post('/setuplogin', 'setuplogin')->name('setuplogin');
+    // Route::get('about-us', 'about')->name('about');
+    // Route::get('service', 'service')->name('service');
+    // Route::get('product', 'product')->name('product');
+    // Route::get('project', 'project')->name('project');
+    // Route::get('contact-us', 'contact')->name('contact-us');
+    // Route::get('blog', 'blog')->name('blog');
+    // Route::get('blog-detail', 'blogDetail')->name('blog-detail');
+    // Route::post('/submitForm','submitForm')->name('submitForm');
+});
+Route::controller(DashboardController::class)->group(function(){
+    Route::get('admin/dashboard', 'index')->name('admin/dashboard')->middleware(ValidAdmin::class);
+    Route::get('admin/logout', 'logout')->name('admin/logout');
+    // Route::get('signup', 'signup')->name('signup');
+    // Route::post('/setupSignup', 'setupSignup')->name('setupSignup');
+    // Route::post('/setuplogin', 'setuplogin')->name('setuplogin');
 });
 
 

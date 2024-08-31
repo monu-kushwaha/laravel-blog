@@ -14,20 +14,18 @@
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                        @if ($errors->has('login_error'))
+                        <div class="alert alert-danger">
+                            {{ $errors->first('login_error') }}
+                        </div>
+                    @endif
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span>
-                                @if(session('message'))
-                                <div class="alert alert-success">
-                                    {{ session('message') }}
-                                </div>
-                                @endif
-                            </span>
                             <a href="admin" class="">
                                 <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
                             </a>
                             <h3>Sign In</h3>
                         </div>
-                        <form action="{{route('setuplogin')}}" method="post">
+                        <form action="{{route('admin/setuplogin')}}" method="post">
                             @csrf
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">

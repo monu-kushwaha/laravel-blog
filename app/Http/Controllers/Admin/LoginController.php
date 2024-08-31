@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Admin;
 
 class LoginController extends Controller
 {
@@ -51,27 +52,29 @@ class LoginController extends Controller
     }
 
     public function setuplogin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string',
-        ]);
-
-        $credentials = [
-            'admin_email' => $request->email,
-            'password' => $request->password,
-        ];
-
-        if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->route('admin/dashboard');
-        } else {
-            return redirect()->route('login')->withErrors(['login_error' => 'Invalid credentials']);
+        {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
+            $admin = Admin::where('admin_email', $request->email)->first();
+            if ($admin && Hash::check($request->password, $admin->admin_password)) {
+                if (Hash::needsRehash($admin->admin_password)) {
+                    $admin->admin_password = Hash::make($request->password);
+                    $admin->save();
+                }
+                Auth::guard('admin')->login($admin);
+                return redirect()->route('admin/dashboard');
+            } else {
+                return redirect()->route('login')->withErrors([
+                    'login_error' => 'Invalid email or password.',
+                ])->withInput();
+            }
         }
-    }
 
+    
 
     public function dashboad(){
-        die('here');
         if (Auth::guard('admin')->check()) {
             return view('index');
         } else {

@@ -185,7 +185,7 @@ Route::controller(LoginController::class)->group(function(){
     Route::get('admin', 'login')->name('login');
     Route::get('signup', 'signup')->name('signup');
     Route::post('/setupSignup', 'setupSignup')->name('setupSignup');
-    Route::post('/setuplogin', 'setuplogin')->name('setuplogin');
+    Route::post('admin/setuplogin', 'setuplogin')->name('admin/setuplogin');
     // Route::get('about-us', 'about')->name('about');
     // Route::get('service', 'service')->name('service');
     // Route::get('product', 'product')->name('product');

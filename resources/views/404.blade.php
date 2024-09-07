@@ -12,7 +12,7 @@
         }
 
         .background404  {
-            background-image: url('img/hampe-to-hai-no.gif');
+            background-image: url('/img/hampe-to-hai-no.gif');
             background-size: cover;
             background-position: center;
             height: 100%;

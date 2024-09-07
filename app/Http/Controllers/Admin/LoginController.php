@@ -7,12 +7,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Cookie;
 use App\Models\Admin;
 
 class LoginController extends Controller
 {
-    public function login(){
-        return render_admin('login');
+    public function login(Request $request){
+        if (Auth::guard('admin')->check()) {
+            return redirect()->route('admin/dashboard');
+        }
+        $cookie = $request->cookie('admin_login');
+        $data = json_decode($cookie);
+        return render_admin('login', ['email' => $data->email ?? '', 'password' => $data->password ?? '']);
     }
 
     public function signup(){
@@ -64,6 +70,12 @@ class LoginController extends Controller
                     $admin->save();
                 }
                 Auth::guard('admin')->login($admin);
+
+                if($request->checked){
+                    $cookieName = 'admin_login';
+                    $minutes = 60 * 24 * 7;
+                    Cookie::queue($cookieName, json_encode(['email' => $admin->admin_email, 'password' => $request->password]), $minutes);
+                }
                 return redirect()->route('admin/dashboard');
             } else {
                 return redirect()->route('login')->withErrors([
@@ -72,15 +84,6 @@ class LoginController extends Controller
             }
         }
 
-    
-
-    public function dashboad(){
-        if (Auth::guard('admin')->check()) {
-            return view('index');
-        } else {
-            return redirect()->route('login');
-        }
-    }
 
 
 }

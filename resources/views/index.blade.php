@@ -8,7 +8,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item">
-                <img src="img/slider-1.jpg" class="img-fluid" alt="First slide"  style="max-height:550px; min-width:100%;">
+                <img src="{{url('img/slider-1.jpg')}}" class="img-fluid" alt="First slide"  style="max-height:550px; min-width:100%;">
                 <div class="carousel-caption">
                     <div class="container carousel-content">
                         <h6 class="text-secondary h4 animated fadeInUp">Portfolio</h6>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img/slider-2.jpeg" class="img-fluid" alt="Second slide"  style="max-height:550px;min-width:100%;">
+                <img src="{{url('img/slider-2.jpeg')}}" class="img-fluid" alt="Second slide"  style="max-height:550px;min-width:100%;">
                 <div class="carousel-caption">
                     <div class="container carousel-content">
                         <h6 class="text-secondary h4 animated fadeInUp">Portfolio</h6>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="carousel-item active">
-                <img src="img/slider-3.jpg" class="img-fluid" alt="Second slide"  style="max-height:550px;min-width:100%;">
+                <img src="{{url('img/slider-3.jpg')}}" class="img-fluid" alt="Second slide"  style="max-height:550px;min-width:100%;">
                 <div class="carousel-caption">
                     <div class="container carousel-content">
                         <h6 class="text-secondary h4 animated fadeInUp">Portfolio</h6>
@@ -97,9 +97,9 @@
         <div class="row g-5">
             <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
                 <div class="h-100 position-relative">
-                    <img src="img/about-2.jpg" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                    <img src="{{url('img/about-2.jpg')}}" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
                     <div class="position-absolute w-75" style="top: 25%; left: 25%;">
-                        <img src="img/about-1.jpeg" class="img-fluid w-100 rounded" alt="">
+                        <img src="{{url('img/about-1.jpeg')}}" class="img-fluid w-100 rounded" alt="">
                     </div>
                 </div>
             </div>

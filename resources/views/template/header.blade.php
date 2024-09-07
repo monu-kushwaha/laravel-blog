@@ -17,16 +17,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{url('lib/animate/animate.min.css')}}" rel="stylesheet">
+        <link href="{{url('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{url('css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{url('css/style.css')}}" rel="stylesheet">
     </head>
-
     <body>
         
         <!-- Spinner Start -->
@@ -76,8 +75,8 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle {{ Request::path() == 'blog' ? 'active' : '' }}" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded">
-                                    <a href="blog" class="dropdown-item {{ Request::path() == 'blog' ? 'active' : '' }}">Our Blog</a>
-                                    <a href="404" class="dropdown-item">404 Page</a>
+                                    <a href="{{url('blog')}}" class="dropdown-item {{ Request::path() == 'blog' ? 'active' : '' }}">Our Blog</a>
+                                    <a href="{{url('404')}}" class="dropdown-item">404 Page</a>
                                 </div>
                             </div>
                             <a href="contact-us" class="nav-item nav-link {{ Request::path() == 'contact-us' ? 'active' : '' }}">Contact</a>

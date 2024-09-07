@@ -8,6 +8,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\configrationController;
 use App\Http\Middleware\ValidAdmin;
 
 // Route::get('/', function () {
@@ -156,18 +157,18 @@ Route::get('/post', function(){
 // Route::get('/showBlock/{id}',[UserController::class,'showBlock'])->name('showBlock');
 
 
-Route::controller(userController::class)->group(function(){
-    Route::get('/user/{id}','showUser')->name('users');
-    Route::get('/show','show')->name('show');
-    Route::get('/singleUser/{id}','singleUser')->name('singleUser');
-    Route::get('/showBlock/{id}','showBlock')->name('showBlock');
-    Route::get('/addUser','addUser')->name('addUser');
-    Route::get('/updateUser','updateUser')->name('updateUser');
-    Route::get('/deleteUser/{id}','deleteUser')->name('deleteUser');
-    Route::get('/updateUsers/{id?}','updateUsers')->name('updateUsers');
-    Route::post('/insertUser','insertUser')->name('insertUser');
-    Route::post('/update/{id}','update')->name('update');
-});
+// Route::controller(userController::class)->group(function(){
+//     Route::get('/user/{id}','showUser')->name('users');
+//     Route::get('/show','show')->name('show');
+//     Route::get('/singleUser/{id}','singleUser')->name('singleUser');
+//     Route::get('/showBlock/{id}','showBlock')->name('showBlock');
+//     Route::get('/addUser','addUser')->name('addUser');
+//     Route::get('/updateUser','updateUser')->name('updateUser');
+//     Route::get('/deleteUser/{id}','deleteUser')->name('deleteUser');
+//     Route::get('/updateUsers/{id?}','updateUsers')->name('updateUsers');
+//     Route::post('/insertUser','insertUser')->name('insertUser');
+//     Route::post('/update/{id}','update')->name('update');
+// });
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('home', 'index')->name('home');
@@ -203,6 +204,14 @@ Route::controller(DashboardController::class)->group(function(){
     // Route::post('/setuplogin', 'setuplogin')->name('setuplogin');
 });
 
+Route::controller(configrationController::class)->group(function(){
+    Route::get('admin/configration', 'index')->name('admin/configration');
+});
+
+Route::controller(UserController::class)->group(function(){
+    Route::get('user/login', 'index')->name('user/login');
+});
+
 
 
 // Route::resource('users', UsersController::class);
@@ -210,6 +219,5 @@ Route::resource('users', UsersController::class)->names(['create' => 'userCreate
 
 
 Route::fallback(function(){
-    // return "<h1>Ham Pe To Hai na</h1>";
     return render_view('404');
 });

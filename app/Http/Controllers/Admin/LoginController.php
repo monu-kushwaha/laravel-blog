@@ -58,32 +58,30 @@ class LoginController extends Controller
     }
 
     public function setuplogin(Request $request)
-        {
-            $request->validate([
-                'email' => 'required|email',
-                'password' => 'required',
-            ]);
-            $admin = Admin::where('admin_email', $request->email)->first();
-            if ($admin && Hash::check($request->password, $admin->admin_password)) {
-                if (Hash::needsRehash($admin->admin_password)) {
-                    $admin->admin_password = Hash::make($request->password);
-                    $admin->save();
-                }
-                Auth::guard('admin')->login($admin);
-
-                if($request->checked){
-                    $cookieName = 'admin_login';
-                    $minutes = 60 * 24 * 7;
-                    Cookie::queue($cookieName, json_encode(['email' => $admin->admin_email, 'password' => $request->password]), $minutes);
-                }
-                return redirect()->route('admin/dashboard');
-            } else {
-                return redirect()->route('login')->withErrors([
-                    'login_error' => 'Invalid email or password.',
-                ])->withInput();
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        $admin = Admin::where('admin_email', $request->email)->first();
+        if ($admin && Hash::check($request->password, $admin->admin_password)) {
+            if (Hash::needsRehash($admin->admin_password)) {
+                $admin->admin_password = Hash::make($request->password);
+                $admin->save();
             }
+            Auth::guard('admin')->login($admin);
+
+            if($request->checked){
+                $cookieName = 'admin_login';
+                $minutes = 60 * 24 * 7;
+                Cookie::queue($cookieName, json_encode(['email' => $admin->admin_email, 'password' => $request->password]), $minutes);
+            }
+            return redirect()->route('admin/dashboard');
+        } else {
+            return redirect()->route('login')->withErrors([
+                'login_error' => 'Invalid email or password.',
+            ])->withInput();
         }
-
-
+    }
 
 }

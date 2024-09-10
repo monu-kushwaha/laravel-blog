@@ -16,11 +16,13 @@ class CreateTblAdminTable extends Migration
         Schema::create('tbl_admin', function (Blueprint $table) {
             $table->id('admin_id');
             $table->string('admin_name');
-            $table->string('admin_conact');
+            $table->string('admin_contact')->nullable();
             $table->string('admin_email')->unique();
             $table->string('admin_image')->nullable();
             $table->string('admin_password');
-            $table->timestamps(); // This will create created_at and updated_at columns
+            $table->string('admin_created_at');
+            $table->string('admin_updated_at');
+            // $table->timestamps(); // This will create created_at and updated_at columns
         });
     }
 

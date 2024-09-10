@@ -1,10 +1,5 @@
 
     <div class="container-fluid position-relative d-flex p-0">
-        <!-- Sidebar Start -->
-        @include('admin.template.sidebar')
-        <!-- Sidebar End -->
-
-
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->

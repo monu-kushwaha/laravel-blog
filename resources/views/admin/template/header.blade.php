@@ -30,5 +30,14 @@
     <!-- Template Stylesheet -->
     <link href="{{url('css/admin-style.css')}}" rel="stylesheet">
 </head>
-
 <body>
+    {{-- @yield(); --}}
+    @if (Auth::guard('admin')->check())
+        @include('admin.template.sidebar')
+    @endif
+
+
+    {{-- @section('headersearchtest')
+    <h1>Hello</h1>
+    @endsection --}}
+    {{-- @yield('headersearchtest') --}}

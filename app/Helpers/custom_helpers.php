@@ -28,13 +28,10 @@ if (!function_exists('render_admin')) {
             if (!$page) {
                 return redirect()->route('404');
             }
-    
             $header = view('admin.template.header')->render();
             $content = view('admin.' . $page, $data)->render();
             $footer = view('admin.template.footer')->render();
-    
             $fullPage = $header . $content . $footer;
-    
             return response($fullPage);
         }
     }

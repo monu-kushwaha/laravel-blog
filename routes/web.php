@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\configrationController;
+use App\Http\Controllers\Admin\EmailCollectionController;
 use App\Http\Middleware\ValidAdmin;
 
 // Route::get('/', function () {
@@ -187,25 +188,19 @@ Route::controller(LoginController::class)->group(function(){
     Route::get('signup', 'signup')->name('signup');
     Route::post('/setupSignup', 'setupSignup')->name('setupSignup');
     Route::post('admin/setuplogin', 'setuplogin')->name('admin/setuplogin');
-    // Route::get('about-us', 'about')->name('about');
-    // Route::get('service', 'service')->name('service');
-    // Route::get('product', 'product')->name('product');
-    // Route::get('project', 'project')->name('project');
-    // Route::get('contact-us', 'contact')->name('contact-us');
-    // Route::get('blog', 'blog')->name('blog');
-    // Route::get('blog-detail', 'blogDetail')->name('blog-detail');
-    // Route::post('/submitForm','submitForm')->name('submitForm');
+    Route::post('admin/form', 'form')->name('admin/form');
 });
 Route::controller(DashboardController::class)->group(function(){
     Route::get('admin/dashboard', 'index')->name('admin/dashboard')->middleware(ValidAdmin::class);
     Route::get('admin/logout', 'logout')->name('admin/logout');
-    // Route::get('signup', 'signup')->name('signup');
-    // Route::post('/setupSignup', 'setupSignup')->name('setupSignup');
-    // Route::post('/setuplogin', 'setuplogin')->name('setuplogin');
 });
 
 Route::controller(configrationController::class)->group(function(){
     Route::get('admin/configration', 'index')->name('admin/configration');
+});
+
+Route::controller(EmailCollectionController::class)->group(function(){
+    Route::get('admin/email-collection', 'index')->name('admin/emailConllection')->middleware(ValidAdmin::class);;
 });
 
 Route::controller(UserController::class)->group(function(){

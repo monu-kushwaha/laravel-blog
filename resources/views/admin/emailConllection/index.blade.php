@@ -2,12 +2,12 @@
     <div class="row g-4">
         <div class="col-sm-12 col-xl-12">
             <div class="bg-secondary rounded h-100 p-4">
-                <form action="">
+                <form method="post" style="display: flex">
                     <div class="form-group col-10">
                         <input type="text" class="form-control">
                     </div>
-                    <div class="form-group col-12">
-                        <input type="text" class="form-control">
+                    <div class="form-group col-2" >
+                        <button class="btn btn-danger mx-auto">Search</button>
                     </div>
                 </form>
             </div>
